@@ -20,8 +20,7 @@ export const middleware = (request: NextRequest) => {
 export const config = {
     matcher: [
         '/',
-        '/profile',
-        '/profile/[id]',
+        '/profile/:path*',
         '/login',
         '/signup'
     ]
