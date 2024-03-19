@@ -40,7 +40,7 @@ const LoginPage = (props: Props) => {
 
   return (
     <div className='flex items-center flex-col max-w-md mx-auto'>
-      <h1 className='text-2xl mb-4'>Login</h1>
+      <h1 className='text-2xl mb-4'>{loading ? "Processing" : "Login"}</h1>
       <hr className='border-t border-gray-300 my-4'/>
 
       <label htmlFor="email" className='text-gray-600'>Email</label>
@@ -63,7 +63,7 @@ const LoginPage = (props: Props) => {
         placeholder='Password' 
       />
 
-      <button onClick={onLogin} className=' bg-orange-400 p-4 w-full rounded-md mb-8'>Sign Up</button>
+      {buttonDisabled === false && <button onClick={onLogin} className=' bg-orange-400 p-4 w-full rounded-md mb-8'>Sign Up</button>}
 
       <span className='text-sm'><Link href="/signup">signup </Link> instead</span>
     </div>
